@@ -2,7 +2,7 @@
 
 Various school projects I worked on
 
-Web Programming:
+**Web Programming:**
 
   4x4sudoku:
 
@@ -26,7 +26,7 @@ Web Programming:
       Search the imported RSS feed information for keywords and display results, sorted by publication date
       
 
-High Peformance Computing:
+**High Peformance Computing:**
 
   diffeq_mpi:
 
