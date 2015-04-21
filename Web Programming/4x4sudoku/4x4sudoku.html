@@ -1,0 +1,681 @@
+<!--
+Brian Taylor
+
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Sudoku</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+<SCRIPT TYPE="text/javascript" SRC="sudoku.js"></SCRIPT>
+</HEAD>
+<BODY>
+
+<H2>Sudoku</H2>
+
+<TABLE CLASS="outer" WIDTH="400">
+	<TR HEIGHT="200">
+		<TD CLASS="outer" WIDTH="50%">
+			<TABLE ID="QUAD1" CLASS="inner" WIDTH="100%">
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD1_TOP_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_TOP_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,0,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD1_TOP_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,0,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_TOP_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,0,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD1_TOP_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,0,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD1_TOP_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD1_TOP_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_TOP_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,1,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD1_TOP_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,1,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_TOP_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,1,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD1_TOP_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,1,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD1_TOP_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+						</TD>
+				</TR>
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD1_BOTTOM_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_BOTTOM_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,0,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD1_BOTTOM_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,0,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_BOTTOM_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,0,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD1_BOTTOM_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,0,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD1_BOTTOM_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD1_BOTTOM_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_BOTTOM_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,1,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD1_BOTTOM_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,1,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD1_BOTTOM_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,1,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD1_BOTTOM_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,1,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD1_BOTTOM_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+		<TD CLASS="outer" WIDTH="50%">
+			<TABLE ID="QUAD2" CLASS="inner" WIDTH="100%">
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD2_TOP_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_TOP_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,2,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD2_TOP_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,2,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_TOP_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,2,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD2_TOP_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,2,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD2_TOP_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD2_TOP_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_TOP_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,3,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD2_TOP_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,3,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_TOP_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,3,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD2_TOP_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(0,3,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD2_TOP_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+						</TD>
+				</TR>
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD2_BOTTOM_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_BOTTOM_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,2,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD2_BOTTOM_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,2,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_BOTTOM_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,2,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD2_BOTTOM_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,2,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD2_BOTTOM_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD2_BOTTOM_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_BOTTOM_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,3,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD2_BOTTOM_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,3,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD2_BOTTOM_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,3,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD2_BOTTOM_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(1,3,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD2_BOTTOM_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR HEIGHT="200">
+		<TD CLASS="outer" WIDTH="50%">
+			<TABLE ID="QUAD3" CLASS="inner" WIDTH="100%">
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD3_TOP_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_TOP_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,0,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD3_TOP_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,0,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_TOP_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,0,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD3_TOP_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,0,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD3_TOP_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD3_TOP_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_TOP_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,1,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD3_TOP_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,1,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_TOP_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,1,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD3_TOP_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,1,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD3_TOP_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+						</TD>
+				</TR>
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD3_BOTTOM_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_BOTTOM_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,0,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD3_BOTTOM_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,0,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_BOTTOM_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,0,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD3_BOTTOM_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,0,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD3_BOTTOM_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD3_BOTTOM_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_BOTTOM_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,1,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD3_BOTTOM_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,1,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD3_BOTTOM_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,1,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD3_BOTTOM_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,1,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD3_BOTTOM_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+		<TD CLASS="outer" WIDTH="50%">
+			<TABLE ID="QUAD4" CLASS="inner" WIDTH="100%">
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD4_TOP_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_TOP_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,2,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD4_TOP_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,2,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_TOP_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,2,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD4_TOP_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,2,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD4_TOP_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD4_TOP_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_TOP_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,3,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD4_TOP_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,3,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_TOP_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,3,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD4_TOP_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(2,3,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD4_TOP_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+						</TD>
+				</TR>
+				<TR HEIGHT="100">
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD4_BOTTOM_LEFT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_BOTTOM_LEFT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,2,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD4_BOTTOM_LEFT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,2,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_BOTTOM_LEFT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,2,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD4_BOTTOM_LEFT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,2,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD4_BOTTOM_LEFT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+					<TD CLASS="inner" WIDTH="50%">
+						<TABLE ID="QUAD4_BOTTOM_RIGHT_TABLE" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_BOTTOM_RIGHT_1" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,3,1);return false">1</A>
+								</TD>
+								<TD ID="QUAD4_BOTTOM_RIGHT_2" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,3,2);return false">2</A>
+								</TD>
+							</TR>
+							<TR HEIGHT="50">
+								<TD ID="QUAD4_BOTTOM_RIGHT_3" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,3,3);return false">3</A>
+								</TD>
+								<TD ID="QUAD4_BOTTOM_RIGHT_4" CLASS="innermost" WIDTH="50%">
+									<A HREF="#" ONCLICK="make_move(3,3,4);return false">4</A>
+								</TD>
+							</TR>							
+						</TABLE>
+						<TABLE ID="QUAD4_BOTTOM_RIGHT_NUMBER" CLASS="innermost" WIDTH="100%">
+							<TR HEIGHT="50">
+								<TD CLASS="innermost" WIDTH="50%">
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="BUTTON" ID="UNDO" VALUE="Undo Last Move" ONCLICK="undo_last_move()"></INPUT>
+
+<SCRIPT TYPE="text/javascript">
+
+board = new Array(new Array(0, 0, 0, 0),
+                  new Array(0, 0, 0, 0),
+                  new Array(0, 0, 0, 0),
+                  new Array(0, 0, 0, 0));
+				  
+board_old = new Array(new Array(0, 0, 0, 0),
+                      new Array(0, 0, 0, 0),
+                      new Array(0, 0, 0, 0),
+                      new Array(0, 0, 0, 0));
+
+function initialize()
+{
+	var i, j;
+	
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			board[i][j] = initBoard[i][j];
+			board_old[i][j] = initBoard[i][j];
+		}
+	}
+	
+	mark_numbers();
+	document.getElementById("UNDO").disabled = true;	
+}
+
+function get_string(i, j)
+{
+	if (i == 0 && j == 0)
+		return "QUAD1_TOP_LEFT";
+	if (i == 0 && j == 1)
+		return "QUAD1_TOP_RIGHT";
+	if (i == 1 && j == 0)
+		return "QUAD1_BOTTOM_LEFT";
+	if (i == 1 && j == 1)
+		return "QUAD1_BOTTOM_RIGHT";
+
+	if (i == 0 && j == 2)
+		return "QUAD2_TOP_LEFT";
+	if (i == 0 && j == 3)
+		return "QUAD2_TOP_RIGHT";
+	if (i == 1 && j == 2)
+		return "QUAD2_BOTTOM_LEFT";
+	if (i == 1 && j == 3)
+		return "QUAD2_BOTTOM_RIGHT";
+
+	if (i == 2 && j == 0)
+		return "QUAD3_TOP_LEFT";
+	if (i == 2 && j == 1)
+		return "QUAD3_TOP_RIGHT";
+	if (i == 3 && j == 0)
+		return "QUAD3_BOTTOM_LEFT";
+	if (i == 3 && j == 1)
+		return "QUAD3_BOTTOM_RIGHT";
+
+	if (i == 2 && j == 2)
+		return "QUAD4_TOP_LEFT";
+	if (i == 2 && j == 3)
+		return "QUAD4_TOP_RIGHT";
+	if (i == 3 && j == 2)
+		return "QUAD4_BOTTOM_LEFT";
+	if (i == 3 && j == 3)
+		return "QUAD4_BOTTOM_RIGHT";
+}
+
+function is_valid(x, y, num)
+{
+	var i, j;
+	// Is this num in this row?
+	for (j = 0; j < 4; j++)
+	{
+		if (board[x][j] == num)
+			return false;
+	}
+
+	// Is this num in this col?
+	for (i = 0; i < 4; i++)
+	{
+		if (board[i][y] == num)
+			return false;
+	}
+
+	// Is this num in this quad? (check the diagonal in quad)
+	if (x < 2 && y < 2)
+		if (board[(x+1)%2][(y+1)%2] == num)
+			return false;
+
+	if (x < 2 && y >= 2)
+		if (board[(x+1)%2][((y+1)%2)+2] == num)
+			return false;
+
+	if (x >= 2 && y < 2)
+		if (board[((x+1)%2)+2][(y+1)%2] == num)
+			return false;
+	
+	if (x >= 2 && y >= 2)
+		if (board[((x+1)%2)+2][((y+1)%2)+2] == num)
+			return false;
+
+	return true;
+}
+
+function game_over()
+{
+	var i, j;
+	for (i = 0; i < 4; i++)
+		for (j = 0; j < 4; j++)
+			if (board[i][j] == 0)
+				return false;
+				
+	return true;
+}
+
+function mark_numbers()
+{
+	var i, j;
+	var tableElement;
+	var numberElement;
+	var element;
+	
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			if (board[i][j] != 0)
+			{
+				// Hide the table
+				tableElement = document.getElementById(get_string(i, j) + "_TABLE");
+				tableElement.style.display = "none";
+				
+				// Show the solved number
+				numberElement = document.getElementById(get_string(i, j) + "_NUMBER");
+				numberElement.rows[0].cells[0].textContent = board[i][j];
+				numberElement.style.fontSize = "300%";
+				numberElement.style.display = "table";
+			}
+		}
+	}
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			if (board[i][j] == 0)
+			{
+				// Hide the solved number table for now
+				numberElement = document.getElementById(get_string(i, j) + "_NUMBER");
+				numberElement.style.display = "none";
+
+				// Show the unsolved table
+				tableElement = document.getElementById(get_string(i, j) + "_TABLE");
+				tableElement.style.display = "table";
+				tableElement.style.color = "#A8A8A8";
+				
+				// Hide elements that aren't possible for current board configuration
+				for (a = 1; a <= 4; a++)
+				{
+					element = document.getElementById(get_string(i, j) + "_" + a);
+					if (!is_valid(i, j, a))
+					{
+						element.style.visibility = "hidden";
+					}
+					else
+					{
+						element.style.visibility = "visible";
+					}
+				}
+			}
+		}
+	}
+	
+	if (game_over())
+	{
+		alert("Congratulations! You win!");
+		
+		initialize();
+	}
+}
+
+function make_move(x, y, num)
+{
+	var i, j;
+	for (i = 0; i < 4; i++)
+		for (j = 0; j < 4; j++)
+			board_old[i][j] = board[i][j];
+
+	board[x][y] = num;
+	mark_numbers();
+	document.getElementById("UNDO").disabled = false;
+}
+
+function undo_last_move()
+{
+	var i, j;
+	for (i = 0; i < 4; i++)
+		for (j = 0; j < 4; j++)
+			board[i][j] = board_old[i][j];
+	
+	mark_numbers();
+	document.getElementById("UNDO").disabled = true;
+}
+
+initialize();
+
+</SCRIPT>
+</BODY>
+</HTML>

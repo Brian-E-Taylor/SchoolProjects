@@ -1,0 +1,33 @@
+table
+{
+	border-spacing: 0px;
+}
+
+td
+{
+	padding: 0px;
+}
+
+.outer
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+.inner
+{
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+
+.innermost
+{
+	border-collapse:collapse;
+	border: 0px;
+	text-align: center;
+}
+
+a
+{
+	color: #A8A8A8;
+}
