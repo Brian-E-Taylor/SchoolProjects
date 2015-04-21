@@ -1,11 +1,15 @@
 # SchoolProjects
+
 Various school projects I worked on
 
 Web Programming:
+
   4x4sudoku:
+
     JavaScript implementation of 4x4 Sudoku puzzle with hints
     
   perlParser:
+
     parse.pl parses a specified HTML page and coverts data into tab seperated format, stored in output file
     answer.pl reads all output files, then prompts user for inputs and gives back answers
       4 inputs are possible:
@@ -15,6 +19,7 @@ Web Programming:
         4) "GOALS", giving back the total number of goals for each team for all years, in descending order
 
   rssImport:
+
     rss-import.php:
       Reads a list of RSS feeds and imports their summaries into a MySQL database
     rss-search.php:
@@ -22,10 +27,13 @@ Web Programming:
       
 
 High Peformance Computing:
+
   diffeq_mpi:
+
     Calculate differential equation using Laplace transformation
     using Open MPI
     
   diffeq_openmp:
+
     Calculate differential equation using Laplace transformation
     using OpenMP
